@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-
+// article schema
 const articleSchema = new mongoose.Schema({
   slug: String,
   title: String,
@@ -24,6 +24,8 @@ const articleSchema = new mongoose.Schema({
   }
 })
 
+
+// clean article schema
 articleSchema.set('toJSON', {
   transform: (document, returnObject) => {
     returnObject.id = returnObject._id.toString()

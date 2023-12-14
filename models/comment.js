@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-
+// comment schema
 const commentSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
@@ -11,6 +11,9 @@ const commentSchema = new mongoose.Schema({
   }
 })
 
+
+
+// clean comment schema
 commentSchema.set('toJSON', {
   transform: (document, returnObject) => {
     returnObject.id = returnObject._id.toString()

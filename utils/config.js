@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-
+// keys and enviroments
 const PORT = process.env.PORT
 const MONGODB_URI = process.env.MONGODB_URI
 

@@ -1,16 +1,10 @@
 const mongoose = require('mongoose')
 
-
+// profile schema
 const profileSchema = new mongoose.Schema({
   username: String,
   bio: String,
   image: String,
-  followers: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Profile'
-    }
-  ],
   following: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -19,6 +13,8 @@ const profileSchema = new mongoose.Schema({
   ]
 })
 
+
+// clean profile schema
 profileSchema.set('toJSON', {
   transform: (document, returnObject) => {
     returnObject.id = returnObject._id.toString()

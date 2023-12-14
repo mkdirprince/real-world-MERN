@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
+
+// user schema
 const userSchema = new mongoose.Schema({
   email: String,
   username: {
@@ -21,6 +23,8 @@ const userSchema = new mongoose.Schema({
   ]
 })
 
+
+// clean up schema
 userSchema.set('toJSON', {
   transform: (document, returnObject) => {
     returnObject.id = returnObject._id.toString()
@@ -32,6 +36,7 @@ userSchema.set('toJSON', {
   }
 })
 
+// plugin for uniqueness
 userSchema.plugin(uniqueValidator)
 
 module.exports = mongoose.model('User', userSchema)
